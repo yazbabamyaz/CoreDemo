@@ -33,9 +33,19 @@ namespace BusinessLayer.Concrete
 			return _blogDal.GetAll();
 		}
 
+		public List<Blog> GetBlogListWithCategory()
+		{
+			return _blogDal.GetListWithCategory();//dal katmanındaki metodu çalıştır.
+		}
+
 		public Blog GetById(int id)
 		{
 			throw new NotImplementedException();
+		}
+
+		public List<Blog> GetBlogById(int id)
+		{
+			return _blogDal.GetAll(c=>c.BlogId == id);
 		}
 
 		public void UpdateBlog(Blog blog)
